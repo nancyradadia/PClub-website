@@ -123,5 +123,7 @@ STATIC_URL = '/static/'
 STATICFILES_DIR=[
    os.path.join(BASE_DIR, 'static')
 ]
+
 MEDIA_URL = 'http://127.0.0.1:8000/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'pclub')
+#pclub

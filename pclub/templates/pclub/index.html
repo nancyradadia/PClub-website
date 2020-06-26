@@ -3,7 +3,9 @@
 <html>
 <head>
     <title>PClub</title>
-    <link rel="stylesheet" type="text/css" href={% static 'css/index.css' %}>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Nanum+Gothic&family=Nanum+Gothic+Coding:wght@700&display=swap"
+          rel="stylesheet">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
           integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -13,187 +15,645 @@
             integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
             crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="{% static 'css/trial.css' %}">
+    <style>
+
+
+        .contact {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            height: 100vh;
+            overflow: scroll;
+            /* Should be removed. Only for demonstration */
+        }
+
+        .form {
+            width: 370px;
+        {#height: 600px;#} background: #5a5a5a;
+            border-radius: 8px;
+            box-shadow: 0 0 40px -10px #000;
+            margin: calc(50vh - 220px) auto;
+            padding: 0 30px;
+            max-width: calc(100vw - 40px);
+            box-sizing: border-box;
+            font-family: "Montserrat", sans-serif;
+            position: relative;
+            font-size: 15px;
+            color: white;
+        }
+
+        .form h2 {
+        {#margin: 10px 0;#} padding-top: 15px;
+            padding-bottom: 15px;
+        {#width: 180px;#} color: white;
+            font-size: 25px;
+            padding-left: 100px;
+
+        {#border-bottom: 3px solid #78788c;#}
+        }
+
+        .form input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            background: none;
+            outline: none;
+            resize: none;
+            border: 0;
+            font-family: "Montserrat", sans-serif;
+            transition: all 0.3s;
+            border-bottom: 2px solid #bebed2;
+        }
+
+        .form input:focus {
+            border-bottom: 2px solid #78788c;
+        }
+
+        .form p:before {
+            content: attr(type);
+            display: block;
+            margin: 28px 0 0;
+            font-size: 14px;
+            color: #5a5a5a;
+        }
+
+        .form button {
+            float: right;
+            padding: 8px 12px;
+            margin: 14px 0 0;
+            font-family: "Montserrat", sans-serif;
+            border: 2px solid #78788c;
+            border-radius: 14px;
+            background: 0;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .form button:hover {
+            background: #78788c;
+            color: #fff;
+        }
+
+
+        pre {
+            padding: 8px 12px;
+            overflow-x: auto;
+            font-size: 15px;
+
+            width: 100%;
+            background-color: whitesmoke;
+        }
+
+        .footer {
+            float: left;
+            width: 50%;
+            padding: 10px;
+            height: 178.6px;
+        {#overflow: hidden;#} background-color: gray;
+            /* Should be removed. Only for demonstration */
+        }
+
+        #social-media {
+        {#background: #27282C;#} padding-bottom: 10px;
+        }
+
+        .social-icons i {
+            padding: 20px;
+
+        }
+
+        .social-icons a:hover i {
+            transform: translateY(-10px);
+        }
+
+        .form1 {
+
+            width: 200px;
+        {#height: auto;#} background: white;
+            border-radius: 8px;
+        {#box-shadow: 0 0 40px -10px #000;#}{#margin: calc(50vh - 220px) auto;#}{#padding: 0 30px;#} max-width: calc(100vw - 40px);
+            box-sizing: border-box;
+            font-family: "Montserrat", sans-serif;
+            position: relative;
+            font-size: 15px;
+            color: black;
+        }
+
+        .form1 h2 {
+        {#margin: 10px 0;#} padding-top: 15px;
+            padding-bottom: 15px;
+        {#width: 180px;#} color: white;
+            font-size: 25px;
+            padding-left: 100px;
+
+        {#border-bottom: 3px solid #78788c;#}
+        }
+
+        .form1 input {
+            width: 100%;
+            padding: 10px;
+            box-sizing: border-box;
+            background: none;
+            outline: none;
+            resize: none;
+            border: 0;
+            font-family: "Montserrat", sans-serif;
+            transition: all 0.3s;
+
+        {#border-bottom: 2px solid #bebed2;#}
+        }
+
+        .form1 input::placeholder {
+            color: gray;
+        }
+
+        .form1 input:focus {
+            border-bottom: 2px solid #78788c;
+        }
+
+        .form1 p:before {
+        {#content: attr(type);#} display: block;
+            margin: 28px 0 0;
+            font-size: 14px;
+            color: #5a5a5a;
+        }
+
+        .form1 button {
+            float: right;
+            padding: 8px 12px;
+            margin: 14px 0 0;
+            font-family: "Montserrat", sans-serif;
+            border: 2px solid #78788c;
+            border-radius: 14px;
+            background: 0;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        .form1 button:hover {
+            background: #78788c;
+            color: #fff;
+        }
+
+        @media screen and (max-width: 600px) {
+            .contact {
+                width: 100%;
+            }
+
+            .footer {
+                width: 100%;
+                height: auto;
+            }
+
+            .timeslot img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .timeslot span {
+                right: -50px;
+                top: 10px;
+            }
+
+            .even span {
+                left: 100px;
+            }
+
+            .even {
+                float: left;
+            }
+        }
+    </style>
 </head>
 <body>
 <section id="nav-bar">
-    <nav class="navbar navbar-expand-lg navbar-light ">
-        <a class="navbar-brand" href="#"><img src="#"></a>
+    <nav class="navbar navbar-expand-lg navbar-light fill ">
+        <a class="navbar-brand" href="#"><img src="{% static 'img/Black_T1.png' %}"
+                                              style="width: 100%;height: 100%"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <i class="fa fa-bars" aria-hidden="true"></i>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
+            <ul class="navbar-nav mr-auto" style="font-family: 'Nanum Gothic Coding';font-size: large">
+                Programming Club
+            </ul>
+            {#            <ul class="navbar-nav mr-auto" style="color: black">#}
+            {#                <li class="nav-item">#}
+            {#                    <a class="nav-link" href="#top">Programming Club</a>#}
+            {#                </li>#}
+            {#            </ul>#}
+            <ul class="navbar-nav ml-auto" style="padding-right: 65px">
                 <li class="nav-item">
-                    <a class="nav-link" href="#top">Home </a>
+                    <a class="nav-link" href="#top">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#about-us">About Us</a>
+                    <a class="nav-link" href="#announce">Announcements</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Announcements</a>
+                    <a class="nav-link" href="/get_events">Events</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Events</a>
+                    <a class="nav-link" href="/get_resources">Resources</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Resources</a>
+                    <a class="nav-link" href="#gallery">Gallery</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Our Team</a>
+                    <a class="nav-link" href="#team">Team</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="#contact">Contact Us</a>
                 </li>
             </ul>
         </div>
     </nav>
 </section>
-<!-------------banner section-------------------->
-<section id="banner" style="background-image:linear-gradient(to right,#27282C , #27282C);
-    color: #fff;
-    padding-top: 5%;">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6">
-                <p class="promo-title">Programming Club</p>
-                <p> Tagline apdi</p>
-                <a href="#"><img src="#" class="play-btn"> Get Started </a>
-            </div>
-            <div class="col-md-6 text-center">
-                <img src="{% static 'img/development.png' %}" class="img-fluid" width="80%" height="80%">
-            </div>
 
-        </div>
-    </div>
-    <img src="{% static 'img/wave.png' %}" class="bottom-img">
-</section>
-<!-----------about us---------->
-<section id="about-us">
-    <div class="container">
-        <h1 class="title text-center" style="padding-bottom: 50px">About Us</h1>
 
-        <div class="row text-center">
-            <div class="col-md-6 about-us">
-                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
-                    the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley
-                    of type and scrambled it to make a type specimen book. It has survived not only five centuries,
-                    but also the leap into electronic typesetting, remaining essentially unchanged. It was
-                    popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages,
-                    and more recently with desktop publishing software like Aldus PageMaker including versions of
-                    Lorem Ipsum.</p>
+<div class="homepage">
+    <div class="row text-center">
 
-            </div>
-            <div class="col-md-6 about-us">
-                {% for image in img_list %}
-                    <img src=' {{ image.image }}' alt="hii" class="img-fluid mySlides" width="80%" height="80%">
-                {% endfor %}
-            </div>
-            <script>
+        <div class="columns">
 
-                var myIndex = 0;
-                carousel();
-
-                function carousel() {
-                    var i;
-                    var x = document.getElementsByClassName("mySlides");
-                    for (i = 0; i < x.length; i++) {
-                        x[i].style.display = "none";
-                    }
-                    myIndex++;
-                    if (myIndex > x.length) {
-                        myIndex = 1
-                    }
-                    x[myIndex - 1].style.display = "block";
-                    setTimeout(carousel, 2000); // Change image every 2 seconds
-                }
-            </script>
-
-        </div>
-    </div>
-    </div>
-</section>
-<section id="announcements">
-    <div class="continer">
-        <div class="row text-center">
-
-        </div>
-    </div>
-</section>
-<!----------------teams----------->
-<section id="team">
-    <div class="container my-5 py-5 text-center">
-        <div class="row mb-auto">
-            <div class="col">
-                <h1>Our Team</h1>
-                <p class="mt-5">Our Programming Club is overall managed by core committee members which includes
-                    secretary, joint secretary and treasurer.</p>
+            <div class="col-sm-12 text-center">
+                {#                <img src="{% static 'img/White_T.png' %}" width="30%" height="30%">#}
+                <p class='tagl' style="padding-left: 20px">
+                    Code.Eat.Sleep.Repeat.</p>
+                <br>
+                <p class='aboutdes' style="padding-left: 50px">Programming Club (PClub) is a community of students where
+                    all the students of all semester are highly enthusiastic about coding, web-development, organizing
+                    events, Web Designing, Competing in coding competition and many other aspects related to
+                    programming. The club was started in the year 2018 by the students of Information and Communication
+                    Technology.
+                    PClub comes with up the new events, talks, lectures, workshops periodically and makes sure that it
+                    serve as gateway for the people to join and explore more in this field. The secret of getting ahead
+                    is getting started and the club aims to provide every student with the right start.We also ensure to help and guide the students and thus feel free to contact us through mail for instagram</p>
                 <br>
                 <br>
-                <br>
-                <br>
-
+                <a href="../get_events">
+                    <button class="btn btn-transparent" type="button">Explore Our Events!
+                    </button>
+                </a>
             </div>
         </div>
+        <div class="columns">
 
-        <div class="row ">
-            {% for object in team %}
-                <div class="col-md-4">
-                    {#                <div class="col-lg-4 col md-7">#}
-                    {#                 rounded-circle w-20 mb-5#}
-                    <div class="card">
-                        <div class="card-body">
-                            <img src="{{ object.image }}" alt="" class="img-fluid img-thumbnail w-20 mb-5">
-                            <h3>{{ object.name }}</h3>
-                            <h5>{{ object.designation }}</h5>
-                            <div class="d-flex flex-row justify-content-center">
-                                {% if object.linkedIn_url %}
-                                    <div class="p-4">
-                                        <a href="{{ object.linkedIn_url }}">
-                                            <i class="fa fa-linkedin">
-                                            </i>
-                                        </a>
-                                    </div>
-                                {% endif %}
-                                {% if object.github_url %}
-                                    <div class="p-4">
-                                        <a href="{{ object.github_url }}">
-                                            <i class="fa fa-github">
-                                            </i>
-                                        </a>
-                                    </div>
-                                {% endif %}
+            <img src="{% static 'img/3911318.jpg' %}" class="img-fluid" width="90%" height="90%">
+
+        </div>
+
+
+    </div>
+    <div class="annoucol" id="announce" style="background-color: #bfd8ff">
+        <div class="center">
+            <p style="color: black; font-size: 300%">Announcements!</p>
+        </div>
+
+
+    </div>
+    {#display: flex; align-items: center; justify-content: center; flex-direction: column;#}
+    <div class="annoucol"
+         style="background-color: white;  overflow-y: scroll">
+
+        <div class="container text-center" style="">
+            {% if upcoming_events or res %}
+                {% for i in upcoming_events %}
+                    <div class="card text-center">
+
+                        <a href="../get_events">
+                            <div class="card-body">
+                                <h5 class="card-title"
+                                    style="font-family: 'Nanum Gothic', sans-serif; font-weight: bold">
+                                    Check out our latest event {{ i.event_name }} ! </h5>
+                                <i class="fa fa-arrow-circle-right fa-2x arrow" aria-hidden="true"></i>
+                                {##}
+
+                                {#                        <p class="card-text">{{ i.event_info }}</p>#}
+                                {#                        <a href="#" class="btn btn-primary">Go somewhere</a>#}
+                                {#                        <a>#}
+                                {#                            <div class="w3-tag w3-large w3-blue">Check Here!</div>#}
+                                {#                        </a>#}
+
                             </div>
+                        </a>
+                        <div class="card-footer text-muted"
+                             style="background-image: linear-gradient(to left,#bfd8ff,#fff);">
+                            <i class="fa fa-calendar-o" aria-hidden="true"></i> {{ i.event_date }}
                         </div>
                     </div>
+                    <br>
+                    {#                <a href="get_events"><p style="font-size: x-large;color: deepskyblue;font-weight: bold">An event#}
+                    {#                    of {{ i.event_name }}#}
+                    {#                    is coming soon#}
+                    {##}
+                    {#                </p></a>#}
+                    {#                <p style="color: gray">{{ i.event_info }}</p>#}
+                    {#                <hr/>#}
+                {% endfor %}
+                {% for i in res %}
+                    <div class="card text-center">
+
+                        <a href="../get_resources">
+                            <div class="card-body">
+                                <h5 class="card-title"
+                                    style="font-family: 'Nanum Gothic', sans-serif; font-weight: bold">
+                                    Get some handy material on {{ i.tag }} : {{ i.sub_tag }}</h5>
+                                <i class="fa fa-arrow-circle-right fa-2x arrow" aria-hidden="true"></i>
+
+                                {#                        <p class="card-text">{{ i.event_info }}</p>#}
+                                {#                        <a href="#" class="btn btn-primary">Go somewhere</a>#}
+                                {#                        <a href="get_resources">#}
+                                {#                            <div class="w3-tag w3-large w3-blue">Check Here!</div>#}
+                                {#                        </a>#}
+
+                            </div>
+                        </a>
+                        <div class="card-footer text-muted"
+                             style="background-image: linear-gradient(to left,#bfd8ff,#fff);">
+                            <i class="fa fa-calendar-o" aria-hidden="true"></i> {{ i.created_date }}
+                        </div>
+                    </div>
+                    {#                <a href="get_resources"><p#}
+                    {#                        style="font-size: x-large; color: deepskyblue;font-weight: bold">{{ i.sub_tag }}</p></a>#}
+                    <br>
+                {% endfor %}
+
+            {% else %}
+                No upcoming events!
+            {% endif %}
+        </div>
+
+
+    </div>
+    <div class="annoucol" id="gallery" style="background-color: white">
+        <div class="center" style="color: black;">
+            <p style="color: black;font-size: 300%">Gallery</p>
+        </div>
+    </div>
+
+    <div class="gallery" style="background-color: #ffffff">
+
+        {% for object in img_list %}
+            <img class="img-responsive" src="../{{ object.image }}">
+
+        {% endfor %}
+
+
+    </div>
+
+    <div class="annoucol" id="team" style="background-color: #bfd8ff">
+        <div class="center" style="color: black">
+            <p style="font-size: 300% ">Meet the Team!</p>
+        </div>
+
+    </div>
+
+    <div class="Team" style="background-color: #ffffff">
+        <p class="text-center"
+           style="font-family: 'Nanum Gothic';font-size: xx-large;padding-top: 10px;font-weight: bold">Core
+            Committee</p>
+        {#            <img class="img-responsive" src="{{ object.image }}" alt="">#}
+        <br>
+        {% for object in core %}
+            <div class="container">
+                {% if forloop.counter|divisibleby:2 %}
+                    <div class="timeslot even">
+                            <span>
+                            <p style="justify-content: center;font-family: 'Nanum Gothic'">
+                                {{ object.name }}
+                                <br>
+                                {{ object.designation }}
+                                <br>
+                                {% if object.linkedIn_url %}
+                                    <a href="{{ object.linkedIn_url }}" target="_blank">
+                                        <i class="fa fa-linkedin">
+                                        </i>
+                                    </a>
+                                {% endif %}
+
+                                {% if object.github_url %}
+                                    <a href="{{ object.github_url }}">
+                                        <i class="fa fa-github">
+                                        </i>
+                                    </a>
+                                {% endif %}
+                            </p>
+                            </span>
+                        <img class='imgteam rounded-circle' src="../{{ object.image }}" alt="" height="200" width="200">
+                    </div>
+                {% else %}
+
+                    <div class="timeslot">
+                            <span>
+                            <p style="justify-content: center;font-family: 'Nanum Gothic'">
+                                {{ object.name }}
+                                <br>
+                                {{ object.designation }}
+                                <br>
+                                {% if object.linkedIn_url %}
+                                    <a href="{{ object.linkedIn_url }}">
+                                        <i class="fa fa-linkedin">
+                                        </i>
+                                    </a>
+                                {% endif %}
+
+                                {% if object.github_url %}
+                                    <a href="{{ object.github_url }}">
+                                        <i class="fa fa-github">
+                                        </i>
+                                    </a>
+                                {% endif %}
+                            </p>
+                            </span>
+
+                        <img class='imgteam rounded-circle' src="../{{ object.image }}" alt="" height="200" width="200">
+                    </div>
+                {% endif %}
+
+            </div>
+        {% endfor %}
+        <p class="text-center"
+           style="font-family: 'Nanum Gothic';font-size: xx-large;padding-top: 10px;font-weight: bold">Executive
+            Committee</p>
+        <br>
+        {% for object in exec %}
+            <div class="container">
+                {% if not forloop.counter|divisibleby:2 %}
+                    <div class="timeslot even">
+                            <span>
+                            <p style="justify-content: center">
+                                {{ object.name }}
+{#                                <br>#}
+{#                                {{ object.designation }}#}
+                                <br>
+                                {% if object.linkedIn_url %}
+                                    <a href="{{ object.linkedIn_url }}" target="_blank">
+                                        <i class="fa fa-linkedin">
+                                        </i>
+                                    </a>
+                                {% endif %}
+
+                                {% if object.github_url %}
+                                    <a href="{{ object.github_url }}">
+                                        <i class="fa fa-github">
+                                        </i>
+                                    </a>
+                                {% endif %}
+                            </p>
+                            </span>
+                        <img class='imgteam rounded-circle' src="../{{ object.image }}" alt="" height="200" width="200">
+                    </div>
+                {% else %}
+
+                    <div class="timeslot">
+                            <span>
+                            <p style="justify-content: center">
+                                {{ object.name }}
+{#                                <br>#}
+{#                                {{ object.designation }}#}
+                                <br>
+                                {% if object.linkedIn_url %}
+                                    <a href="{{ object.linkedIn_url }}">
+                                        <i class="fa fa-linkedin">
+                                        </i>
+                                    </a>
+                                {% endif %}
+
+                                {% if object.github_url %}
+                                    <a href="{{ object.github_url }}">
+                                        <i class="fa fa-github">
+                                        </i>
+                                    </a>
+                                {% endif %}
+                            </p>
+                            </span>
+                        {# rounded-circle #}
+                        <img class='imgteam rounded-circle' src="../{{ object.image }}" alt="" height="200" width="200">
+                    </div>
+                {% endif %}
+
+            </div>
+        {% endfor %}
+
+    </div>
+    <div class="annoucol" id="contact" style="background-color: white">
+        <div class="center">
+            <p style="font-size: 300%">Contact Us </p>
+        </div>
+
+    </div>
+    <div class="contact" style="background-image:url({% static 'img/googlemaps.PNG' %}) ">
+        <form class="form" method="post">
+
+            {% csrf_token %}
+            <h2>Contact us</h2>
+            {{ form.as_p }}
+            <div class="form-actions">
+                <button type="submit">Send</button>
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            {#            <div style="text-align: center"> Follow us and know more on</div>#}
+            {#            <br>#}
+            {#            <div class="text-center">#}
+            {##}
+            {#                <a href="https://www.instagram.com/ahduni_programmingclub/">#}
+            {#                    <i class="fa fa-instagram fa-3x" style="color: hotpink">#}
+            {#                    </i>#}
+            {#                </a>#}
+            {#            </div>#}
+
+
+        </form>
+
+    </div>
+    <div class="footer">
+        {#        <div class="center">#}
+        <br>
+        <p class="text-center" style="color: white;font-family: 'Nanum Gothic';font-size: large;font-weight: bold">Reach
+            Us At</p>
+        <section id="social-media">
+            {#            <div class="container text-center">#}
+            <div class="social-icons text-center">
+                <a href="mailto:programming.club@ahduni.edu.in"><i class="fa fa-envelope fa-2x"
+                                                                   aria-hidden="true"></i></a>
+                <a href="https://www.instagram.com/ahduni_programmingclub/?hl=en"><i class="fa fa-instagram fa-2x"
+                                                                                     aria-hidden="true"></i></a>
+                <a href="https://www.google.com/maps/dir//ahmedabad+university./@23.0392132,72.4860793,12z/data=!3m1!4b1!4m9!4m8!1m1!4e2!1m5!1m1!1s0x395e848d5f86040f:0x7a0cc8b624851642!2m2!1d72.5561197!2d23.0392286"><i
+                        class="fa fa-map-marker fa-2x" aria-hidden="true"></i></a>
+
+            </div>
+            {#            </div>#}
+
+        </section>
+        {#        </div>#}
+    </div>
+    <div class="footer">
+
+        <br>
+        {#        <p style="padding-left: 500px">Subscribe to our newsletter and</p>#}
+        <div align="center">
+            <p style="color: white">Subscribe to our newsletter by mail and get latest updates ! </p>
+
+
+            <form class="form1" method="post">
+                {% csrf_token %}
+                {{ form1.email }}
+                <div class="form-actions">
+                    <button type="submit">Subscribe!</button>
                 </div>
-            {% endfor %}
+            </form>
         </div>
-    </div>
-</section>
-<!-----footer----->
-<section id="footer">
-    <img src="{% static 'img/wave1.png' %}" class="footer-img">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-6 footer-box">
-                <img src="#">
-                <p>about our club ne je lakhvu hoy ae only image bi works</p>
-            </div>
-            <div class="col-md-6 footer-box">
-                <p><b>Contact Us</b></p>
-                <P><i class="fa fa-map-marker"></i>
-                    Ahmedabad University, Ahmedabad
-                </P>
-                <P><i class="fa fa-phone"></i> 789456123</P>
-                <P><i class="fa fa-envelope-o"></i> programmin.club@ahduni.edu.in</P>
-            </div>
 
 
-        </div>
     </div>
-</section>
+
+
+</div>
+<div class="row1">
+</div>
 <script src="{% static 'js/smooth-scroll.js' %}"></script>
 <script>
     var scroll = new SmoothScroll('a[href*="#"]');
 </script>
-
 </body>
 </html>
+{#    <section id="footer">#}
+{#        <div class="container">#}
+{#            <div class="row">#}
+{#                <div class="col-md-12 footer-box text-center">#}
+{#                <img src="{% static 'img/Black_T.png' %}">#}
+{#                <p>Programming Club</p>#}
+{#                    <form class="form" method="post" style="height: auto;">#}
+{##}
+{#                        {% csrf_token %}#}
+{##}
+{#                        {{ form1.email }}#}
+{##}
+{##}
+{#                        <div class="form-actions">#}
+{#                            <button type="submit">Send</button>#}
+{#                        </div>#}
+{##}
+{##}
+{#                    </form>#}
+{##}
+{#                </div>#}
+{#            </div>#}
+{#                <div class="col-md-6 footer-box">#}
+{#                    <p>jsk</p>#}
+{#                    <p>jsk</p>#}
+{##}
+{#                    <p>jsk</p>#}
+{##}
+{#                </div>#}
+{#        </div>#}
+{#        </section>#}

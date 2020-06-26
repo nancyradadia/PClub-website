@@ -1,0 +1,389 @@
+
+* {
+    box-sizing: border-box;
+}
+
+#nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+}
+
+.navbar {
+
+    background-image: linear-gradient(to right, #ffffff, #ffffff);
+    padding: 0 !important;
+    width: 100vw !important;
+
+}
+
+.navbar-brand img {
+    height: 40px;
+
+    padding-left: 20px;
+}
+
+.navbar-nav li {
+    padding: 0 10px;
+}
+
+.navbar-nav li a {
+    color: #4099FF !important;
+    font-weight: 200;
+    float: right;
+    text-align: left;
+    font-family: 'Nanum Gothic', sans-serif;
+
+}
+
+
+.fa-bars {
+    color: black;
+    font-size: 30px !important;
+}
+
+.navbar-toggler {
+    outline: none !important;
+}
+
+.homepage {
+    background-color: #292F36;
+    height: 100vh;
+}
+
+
+.columns {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 100vh;
+    background-color: white;
+    overflow: scroll;
+    /* Should be removed. Only for demonstration */
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent; /* make scrollbar transparent */
+}
+
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.tagl {
+    padding-top: 100px;
+    color: black;
+    font-size: 250%;
+    font-family: 'Nanum Gothic Coding', monospace;
+    animation: right_to_left 3s ease;
+}
+
+
+.gallery {
+    float: left;
+    width: 50%;
+    height: 100vh;
+    overflow: scroll;
+    /* Should be removed. Only for demonstration */
+}
+
+
+.annoucol {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 100vh;
+
+
+    /* Should be removed. Only for demonstration */
+}
+
+.Team {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 100vh;
+    overflow: scroll;
+
+
+    /* Should be removed. Only for demonstration */
+}
+
+
+.row1:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.btn-transparent {
+    background: transparent;
+    color: gray;
+    -webkit-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -moz-transition: background .2s ease-in-out, border .2s ease-in-out;
+    -o-transition: background .2s ease-in-out, border .2s ease-in-out;
+    transition: background .2s ease-in-out, border .2s ease-in-out;
+    border: 2px solid #4992b7;
+
+}
+
+.btn-transparent:hover {
+    color: gray;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+    .columns {
+        width: 100%;
+    }
+
+    .gallery {
+        width: 100%;
+    }
+
+    .annoucol {
+        width: 100%;
+    }
+    .anncontent{
+        width: 100%;
+    }
+
+    .card {
+        width: 40%;
+
+    }
+
+
+    .Team {
+        width: 100%;
+    }
+
+    .tagl {
+        font-size: 190%;
+    }
+
+
+
+
+
+}
+
+.img-responsive {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Nanum Gothic Coding', monospace;
+    /*color: white;*/
+    font-weight: bold;
+    /*font-size: 250%;*/
+
+}
+
+.container {
+    margin: 10px auto;
+    width: 700px;
+    overflow: hidden;
+}
+#corners {
+  border-radius: 25px;
+  border: 2px solid #73AD21;
+  padding: 20px;
+  width: 200px;
+  height: 150px;
+}
+.timeslot {
+    width: 235px;
+    float: left;
+    margin: 0 0 30px;
+    padding: 10px 0 0 -200px;
+    position: relative;
+}
+
+.timeslot span {
+    font-size: x-large;
+    position: absolute;
+    right: -170px;
+    top: 50px;
+    color: #999;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.even {
+    float: right;
+    padding: 10px 250px -200px 200px;
+}
+
+.even span {
+    font-size: x-large;
+    alignment: inherit;
+    left: -650px;
+    top: 50px;
+    justify-content: center;
+    text-align: center;
+
+}
+
+.footer {
+    float: left;
+    width: 50%;
+    padding: 10px;
+    height: 50vh;
+}
+
+.social:hover {
+    -webkit-transform: scale(1.1);
+    -moz-transform: scale(1.1);
+    -o-transform: scale(1.1);
+}
+
+.social {
+    -webkit-transform: scale(0.8);
+    /* Browser Variations: */
+
+    -moz-transform: scale(0.8);
+    -o-transform: scale(0.8);
+    -webkit-transition-duration: 0.5s;
+    -moz-transition-duration: 0.5s;
+    -o-transition-duration: 0.5s;
+}
+
+/*
+    Multicoloured Hover Variations
+*/
+
+#social-fb:hover {
+    color: deeppink;
+}
+
+#social-tw:hover {
+    color: #4099FF;
+}
+
+#social-gp:hover {
+    color: #d34836;
+}
+
+#social-em:hover {
+    color: #f39c12;
+}
+
+.navbar-light .navbar-nav .nav-link:focus {
+    background-color: deepskyblue;
+    color: white !important;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    background-color: deepskyblue;
+    color: white !important;
+}
+
+.navbar-light .navbar-nav .nav-link:active {
+    background-color: deepskyblue;
+    color: white !important;
+}
+
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.arrow {
+    animation: slide1 1s ease-in-out infinite;
+    margin-left: 9px;
+}
+
+@keyframes slide1 {
+    from {
+        transform: translate(0, 0);
+    }
+
+    50% {
+        transform: translate(10px, 0);
+    }
+
+    to {
+        transform: translate(0, 0);
+    }
+}
+
+.aboutdes {
+    font-family: 'Nanum Gothic', sans-serif;
+    color: #403f3f;
+    text-align: justify;
+    /*padding-left: 30px;*/
+    /*padding-right: 10px;*/
+    animation: fadein 2s;
+    -moz-animation: fadein 2s; /* Firefox */
+    -webkit-animation: fadein 2s; /* Safari and Chrome */
+    -o-animation: fadein 2s; /* Opera */
+}
+
+@keyframes fadein {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadein { /* Firefox */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadein { /* Safari and Chrome */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadein { /* Opera */
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+#footer{
+    background-color: #5a5a5a;
+    color: white;
+}
+.footer-box{
+
+    padding-left: 20px;
+}
+.footer-box img{
+    width: 120px;
+    margin-bottom: 20px;
+    padding-top: 20px;
+}
